@@ -1,0 +1,26 @@
+<div class="container">
+
+  <!-- LOADING -->
+   @if (loading()) {
+    <div class="loading" >
+      <div class="ring"></div>
+      <span>Carregando...</span>
+    </div>
+   }
+
+
+  <!-- MENU -->
+   @if (!loading()) {
+    <div class="menu" >
+    <h1>Bem-vindo!</h1>
+
+    <div class="buttons">
+      <a routerLink="/main/portfolio" class="btn">Portfólio</a>
+      <a routerLink="/main/projetos" class="btn">Projetos</a>
+      <a routerLink="/main/curriculo" class="btn">Currículo</a>
+    </div>
+  </div>
+   }
+
+
+</div>

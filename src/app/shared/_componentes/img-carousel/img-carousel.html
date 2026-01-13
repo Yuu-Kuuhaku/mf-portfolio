@@ -1,0 +1,10 @@
+<div class="carousel">
+  @for (img of images; track $index) {
+    <img
+      [src]="img"
+      class="slide"
+      [class.active]="$index === currentIndex()"
+      alt="Mockup do projeto"
+    />
+  }
+</div>

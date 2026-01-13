@@ -1,0 +1,142 @@
+.projects-section {
+  padding: 120px 8%;
+  background: #050505;
+  color: #fff;
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+}
+
+.section-header p {
+  opacity: 0.6;
+}
+
+/* ===== CARDS ===== */
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+
+.project-card {
+  border-radius: 26px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-height: 420px;
+   user-select: none;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.4),
+    inset 0 0 0 1px rgba(255,255,255,.2);
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(255,255,255,.35);
+}
+
+/* ===== MOCKUPS ===== */
+.mockups {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.mockups img {
+  height: 220px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+  transition: transform .4s ease;
+}
+
+.project-card:hover .mockups img {
+  transform: translateY(-8px);
+}
+
+.project-info{
+  margin-top: auto;
+}
+
+/* ===== INFO ===== */
+.project-info h3 {
+  font-size: 1.8rem;
+}
+
+.project-info span {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.project-info p {
+  margin-top: 12px;
+  opacity: 0.85;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.actions .btn {
+  padding: 14px 14px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #00f0ff, #8b5cf6);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .35s ease;
+}
+
+.actions .btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 30px rgba(0,240,255,.45),
+    0 0 40px rgba(139,92,246,.35);
+}
+
+.actions .outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.5);
+  color: #fff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 28px;
+  }
+
+  .mockups img {
+    height: 180px;
+  }
+}
+
+.list-techs {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+}

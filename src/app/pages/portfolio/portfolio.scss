@@ -1,0 +1,209 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PARALLAX */
+.parallax {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OVERLAY ESCURO */
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00a87a;
+}
+
+/* CONTEÚDO NORMAL */
+.content {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.img-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* vídeo ocupa toda a section */
+.video-section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* CARD CENTRAL */
+.card {
+  padding: 50px 60px;
+  border-radius: 20px;
+  margin-bottom: 1%;
+  position: relative;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+
+}
+
+.overlay, .overlay-img {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* BORDA ANIMADA COM RADIUS */
+.overlay::before  {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 5px; /* espessura da borda */
+  border-radius: inherit;
+
+  background: conic-gradient(
+    from var(--angle),
+    #00a87a,
+    transparent,
+    #00a87a
+  );
+
+  animation: rotate 8s linear infinite;
+
+  /* remove o centro, mantém só a borda */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* animação da cor */
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.sticky-header {
+  position: sticky;
+  top: 0; /* Sticks to the top of the viewport when it reaches this point */
+  margin-top: 1%;
+  z-index: 10; /* Ensures it appears above other content */
+}
+
+
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* seta */
+.scroll-down span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-bottom: 2px solid #00c896;
+  border-right: 2px solid #00c896;
+  transform: rotate(45deg);
+  margin: auto;
+
+  animation: bounce 1.6s infinite;
+}
+
+/* animação de salto */
+@keyframes bounce {
+  0% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(45deg) translateY(8px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.4;
+  }
+}
