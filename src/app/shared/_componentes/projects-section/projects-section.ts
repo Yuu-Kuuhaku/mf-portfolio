@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImgCarousel } from '../img-carousel/img-carousel';
+import { ThreeScene } from "../three-scene/three-scene";
 
 interface Project {
   title: string;
@@ -16,11 +17,16 @@ interface Project {
 @Component({
   selector: 'app-projects-section',
   standalone: true,
-  imports: [CommonModule, ImgCarousel],
+  imports: [CommonModule, ImgCarousel, ThreeScene],
   templateUrl: './projects-section.html',
   styleUrls: ['./projects-section.scss']
 })
 export class ProjectsSectionComponent {
+
+  color = 0xffffff;
+  colorLighten = 0xcacaca;
+  backgroundColor = 0x050505;
+  reflectionMaterialColor = 0xcacaca;
 
   projects = signal<Project[]>([
     {

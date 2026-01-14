@@ -16,8 +16,8 @@
 
     <div class="buttons">
       <a routerLink="/main/portfolio" class="btn">Portfólio</a>
-      <a routerLink="/main/projetos" class="btn">Projetos</a>
-      <a routerLink="/main/curriculo" class="btn">Currículo</a>
+      <a routerLink="/main/portfolio" [queryParams]="{secao: 'projetos'}" class="btn">Projetos</a>
+      <a routerLink="/main/curriculo"  class="btn">Currículo</a>
     </div>
   </div>
    }

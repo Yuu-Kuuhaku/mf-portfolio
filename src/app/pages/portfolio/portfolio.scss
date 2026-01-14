@@ -74,7 +74,6 @@
 .video-section {
   position: relative;
   height: 100vh;
-  overflow: hidden;
 }
 
 /* vídeo ocupa toda a section */
@@ -102,6 +101,9 @@
   text-align: center;
   color: #fff;
 
+  animation: fadeUp 1.2s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
 }
 
 .overlay, .overlay-img {
@@ -112,7 +114,6 @@
 .overlay::before  {
   content: "";
   position: absolute;
-  inset: 0;
   padding: 5px; /* espessura da borda */
   border-radius: inherit;
 
@@ -163,47 +164,10 @@
   position: sticky;
   top: 0; /* Sticks to the top of the viewport when it reaches this point */
   margin-top: 1%;
-  z-index: 10; /* Ensures it appears above other content */
+  z-index: 2; /* Ensures it appears above other content */
 }
 
-
-
-.scroll-down {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* seta */
-.scroll-down span {
-  display: block;
-  width: 16px;
-  height: 16px;
-  border-bottom: 2px solid #00c896;
-  border-right: 2px solid #00c896;
-  transform: rotate(45deg);
-  margin: auto;
-
-  animation: bounce 1.6s infinite;
-}
-
-/* animação de salto */
-@keyframes bounce {
-  0% {
-    transform: rotate(45deg) translateY(0);
-    opacity: 0.4;
-  }
-  50% {
-    transform: rotate(45deg) translateY(8px);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(45deg) translateY(0);
-    opacity: 0.4;
-  }
+.content-section{
+  width: 100%;
+  margin: 0;
 }

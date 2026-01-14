@@ -91,3 +91,66 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .menu h1 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px;
+  }
+
+  .menu h1 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .menu h1 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+
+  .ring {
+    width: 70px;
+    height: 70px;
+    border-width: 3px;
+  }
+
+  .loading span {
+    font-size: 0.9rem;
+  }
+}

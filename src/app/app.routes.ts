@@ -9,40 +9,17 @@ export const routes: Routes = [
     component: Main,
     children: [
       {
-        path: 'home',
-        loadComponent() {
-          return import('./pages/home/home').then(m => m.Home);
-        }
-      },
-      {
-        path: 'about',
-        loadComponent() {
-          return import('./pages/about/about').then(m => m.About);
-        }
-      },
-      {
-        path: 'projects',
-        loadComponent() {
-          return import('./pages/projects/projects').then(m => m.Projects);
-        }
-      },
-      {
         path: 'portfolio',
         loadComponent() {
           return import('./pages/portfolio/portfolio').then(m => m.Portfolio);
         }
-      }
-    ]
-  },
-  {
-    path: 'auth',
-    children: [
-      {
-        path: 'login',
-        loadComponent() {
-          return import('./pages/login/login').then(m => m.Login);
-        }
       },
+      {
+        path: 'curriculo',
+        loadComponent() {
+          return import('./pages/curriculo/curriculo').then(m => m.Curriculo);
+        }
+      }
     ]
   },
   {

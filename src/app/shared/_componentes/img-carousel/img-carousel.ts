@@ -10,7 +10,9 @@ import { Component, Input, OnDestroy, signal } from '@angular/core';
 export class ImgCarousel implements OnDestroy {
  @Input({ required: true }) images: string[] = [];
 
-  currentIndex = signal(0);
+ currentIndex = signal(0);
+  prevIndex = signal<number | null>(null);
+
   intervalId!: number;
 
   constructor() {
@@ -22,9 +24,8 @@ export class ImgCarousel implements OnDestroy {
   next() {
     if (!this.images.length) return;
 
-    this.currentIndex.update(i =>
-      (i + 1) % this.images.length
-    );
+    this.prevIndex.set(this.currentIndex());
+    this.currentIndex.update(i => (i + 1) % this.images.length);
   }
 
   ngOnDestroy() {
