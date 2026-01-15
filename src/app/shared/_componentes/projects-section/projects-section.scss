@@ -16,7 +16,6 @@
   margin-top: 2%;
   text-align: center;
   opacity: 0.6;
-  font-size: 1.5rem;
 }
 
 /* ===== CARDS ===== */
@@ -34,7 +33,7 @@
   flex-direction: column;
   gap: 32px;
   min-height: 420px;
-   user-select: none;
+  user-select: none;
   box-shadow:
     0 30px 60px rgba(0,0,0,.4),
     inset 0 0 0 1px rgba(255,255,255,.2);
@@ -125,6 +124,11 @@
   .mockups img {
     height: 180px;
   }
+
+  .section-header p {
+    text-align: left;
+  }
+
 }
 
 .list-techs {

@@ -1,18 +1,37 @@
-<section class=" parallax video-section" id="portfolio">
-  <video
- autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  >
+<!-- LOADING -->
+@if (loading()) {
+<div class="container">
+  <div class="loading">
+    <div class="ring"></div>
+    <span>Carregando...</span>
+  </div>
+</div>
+}
+
+
+<!-- MENU -->
+@if (!loading() && !isVisible()) {
+<div class="container">
+  <div class="menu">
+    <h1>Bem-vindo!</h1>
+
+    <div class="buttons">
+      <button (click)="show()" class="btn">Ver portfólio</button>
+    </div>
+  </div>
+</div>
+}
+
+@if(isVisible()) {
+<section class="parallax video-section" id="portfolio">
+  <video autoplay muted loop playsinline preload="auto">
     <source src="videos/bg.mp4" type="video/mp4" />
     Seu navegador não suporta vídeo.
   </video>
 
 
-  <div class="card overlay sticky-header" >
-    <img src="images/profile.jpg"  alt="Imagem de Eustáquio Ferreira" class="img-profile overlay-img" />
+  <div class="card overlay sticky-header">
+    <img src="images/profile.jpg" alt="Imagem de Eustáquio Ferreira" class="img-profile" />
     <h2>Eustáquio Ferreira</h2>
     <p>Desenvolvedor</p>
     <br />
@@ -33,5 +52,4 @@
 
 
 </section>
-
-
+}

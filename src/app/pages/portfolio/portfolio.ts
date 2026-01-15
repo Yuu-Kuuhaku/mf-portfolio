@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, computed, ElementRef, HostListener, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { ProjectsSectionComponent } from '../../shared/_componentes/projects-section/projects-section';
 import { Header } from "../../shared/_componentes/header/header";
 import { Sobre } from "../../shared/_componentes/sobre/sobre";
@@ -13,6 +13,19 @@ import { ActivatedRoute, RouterState } from '@angular/router';
 export class Portfolio implements AfterViewInit, OnInit {
 
   private readonly route = inject(ActivatedRoute);
+
+  loading = signal(true);
+  isVisible = signal<boolean>(false);
+
+  constructor() {
+    setTimeout(() => {
+      this.loading.set(false);
+    }, 2000); // 2 segundos
+  }
+
+  show() {
+    this.isVisible.set(true);
+  }
 
   @ViewChild('bgVideo')
   videoRef!: ElementRef<HTMLVideoElement>;

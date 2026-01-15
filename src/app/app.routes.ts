@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { LoadingScreen } from './pages/loading-screen/loading-screen';
 import { NotFound } from './pages/not-found/not-found';
 import { Main } from './main/main';
 
@@ -28,7 +27,8 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: LoadingScreen
+    redirectTo: 'main/portfolio',
+    pathMatch: 'full'
   },
   {
     path: '**',

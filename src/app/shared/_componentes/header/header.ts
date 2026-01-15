@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, computed, HostListener, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,11 +10,20 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
 
-  isVisible = signal(false);
+  screenWidth = signal(window.innerWidth);
+  isVisible = signal(this.screenWidth() <= 1024);
+  menuOpen = signal(false);
+
+  isDesktop = computed(() => this.screenWidth() > 1024);
 
   @HostListener('window:scroll')
   onScroll() {
     const triggerPoint = window.innerHeight;
+
+    if (this.screenWidth() < 1024) {
+      this.isVisible.set(true);
+      return;
+    }
 
     this.isVisible.update(() => window.scrollY >= triggerPoint);
   }
@@ -26,4 +35,22 @@ export class Header {
       block: 'start'
     });
   }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.screenWidth.set(window.innerWidth);
+    if (this.isDesktop()) {
+      this.menuOpen.set(false);
+    }
+  }
+
+  toggleMenu() {
+    console.log('toggleMenu called');
+    this.menuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
+
 }

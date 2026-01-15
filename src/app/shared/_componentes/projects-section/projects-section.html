@@ -1,6 +1,10 @@
 <section class="projects-section" id="projetos">
   <header class="section-header">
-    <app-three-scene text="Projetos" [size]="150" [color]="color" [backgroundColor]="backgroundColor" [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+    @if (isDesktop()) {
+      <app-three-scene text="Projetos" [size]="150" [color]="color" [backgroundColor]="backgroundColor" [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+    } @else {
+      <h2>Projetos</h2>
+    }
     <p>Algumas ideias que saíram do papel</p>
   </header>
 

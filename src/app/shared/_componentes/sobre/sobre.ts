@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, HostListener, signal } from '@angular/core';
 import { ThreeScene } from "../three-scene/three-scene";
 
 @Component({
@@ -8,6 +8,16 @@ import { ThreeScene } from "../three-scene/three-scene";
   styleUrl: './sobre.scss',
 })
 export class Sobre {
+
+  screenWidth = signal(window.innerWidth);
+
+  // breakpoints semânticos
+  isDesktop = computed(() => this.screenWidth() >= 1024);
+
+  @HostListener('window:resize')
+  onResize() {
+    this.screenWidth.set(window.innerWidth);
+  }
   color = 0x111111;
   colorLighten = 0x4a4a4a;
   backgroundColor = 0xfafafa;

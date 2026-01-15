@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,82 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* PARALLAX */
+/* ================= CONTAINER ================= */
+.container {
+  height: 100vh;
+  width: 100%;
+  background: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  overflow: hidden;
+
+  /* ===== LOADING ===== */
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    animation: fadeIn 0.6s ease;
+
+    .ring {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top: 4px solid #00f0ff;
+      border-right: 4px solid #8b5cf6;
+      border-bottom: 4px solid #ec4899;
+      animation: spin 1.2s linear infinite;
+    }
+
+    span {
+      opacity: 0.7;
+      letter-spacing: 1px;
+    }
+  }
+
+  /* ===== MENU ===== */
+  .menu {
+    text-align: center;
+    animation: fadeUp 0.8s ease;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 24px;
+    }
+
+    .btn {
+      margin: 0 auto;
+      padding: 18px 36px;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 0 25px rgba(0, 255, 255, 0.5),
+          0 0 45px rgba(139, 92, 246, 0.4);
+      }
+    }
+  }
+}
+
+/* ================= PARALLAX ================= */
 .parallax {
   height: 100vh;
   display: flex;
@@ -14,54 +89,65 @@
   justify-content: center;
 }
 
-/* OVERLAY ESCURO */
+/* ================= OVERLAY / CARD ================= */
 .overlay {
-  background: rgba(0, 0, 0, 0.6);
+  position: relative;
   padding: 40px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
   color: #fff;
-  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--angle),
+      #00a87a,
+      transparent,
+      #00a87a
+    );
+    animation: rotate 6s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 }
 
-.overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #00a87a;
-}
-
-/* CONTEÚDO NORMAL */
+/* ================= CONTEÚDO ================= */
 .content {
   padding: 80px 20px;
   max-width: 900px;
   margin: auto;
-}
 
-.content h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 }
 
 .img-profile {
@@ -71,83 +157,50 @@
   object-fit: cover;
 }
 
+/* ================= VÍDEO ================= */
 .video-section {
   position: relative;
   height: 100vh;
-}
 
-/* vídeo ocupa toda a section */
-.video-section video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  pointer-events: none;
-}
-
-/* CARD CENTRAL */
-.card {
-  padding: 50px 60px;
-  border-radius: 20px;
-  margin-bottom: 1%;
-  position: relative;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 1;
-  text-align: center;
-  color: #fff;
-
-  animation: fadeUp 1.2s ease forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-}
-
-.overlay, .overlay-img {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* BORDA ANIMADA COM RADIUS */
-.overlay::before  {
-  content: "";
-  position: absolute;
-  padding: 5px; /* espessura da borda */
-  border-radius: inherit;
-
-  background: conic-gradient(
-    from var(--angle),
-    #00a87a,
-    transparent,
-    #00a87a
-  );
-
-  animation: rotate 8s linear infinite;
-
-  /* remove o centro, mantém só a borda */
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-
-  pointer-events: none;
-}
-
-/* animação da cor */
-@keyframes rotate {
-  to {
-    --angle: 360deg;
+  video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
   }
 }
 
-/* ANIMAÇÃO DE ENTRADA */
+/* ================= STICKY HEADER ================= */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  margin-top: 1%;
+  z-index: 2;
+}
+
+.content-section {
+  width: 100%;
+  margin: 0;
+}
+
+/* ================= CSS PROPERTIES ================= */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ================= ANIMAÇÕES ================= */
+@keyframes rotate {
+  to { --angle: 360deg; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -159,15 +212,60 @@
   }
 }
 
-
-.sticky-header {
-  position: sticky;
-  top: 0; /* Sticks to the top of the viewport when it reaches this point */
-  margin-top: 1%;
-  z-index: 2; /* Ensures it appears above other content */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.content-section{
-  width: 100%;
-  margin: 0;
+/* ================= RESPONSIVO ================= */
+@media (max-width: 1024px) {
+  .menu h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .overlay {
+    padding: 28px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .menu h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+
+  .ring {
+    width: 70px;
+    height: 70px;
+    border-width: 3px;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImgCarousel } from '../img-carousel/img-carousel';
 import { ThreeScene } from "../three-scene/three-scene";
@@ -22,6 +22,17 @@ interface Project {
   styleUrls: ['./projects-section.scss']
 })
 export class ProjectsSectionComponent {
+
+
+  screenWidth = signal(window.innerWidth);
+
+  // breakpoints semânticos
+  isDesktop = computed(() => this.screenWidth() >= 1024);
+
+  @HostListener('window:resize')
+  onResize() {
+    this.screenWidth.set(window.innerWidth);
+  }
 
   color = 0xffffff;
   colorLighten = 0xcacaca;
@@ -59,7 +70,7 @@ export class ProjectsSectionComponent {
       github_link: 'https://github.com/Yuu-Kuuhaku/malditos-goblins'
     },
     {
-      title: 'Estruturapp/easyapp',
+      title: 'estruturapp (easyapp)',
       subtitle: 'Software de premiação/Cashback',
       description: 'Plataforma que ajuda empresas a aumentar vendas por meio de premiação e cashback personalizados, fortalecendo a fidelização de clientes e parceiros locais.',
       gradient: 'linear-gradient(135deg,rgba(72, 23, 147, 1), rgba(217, 95, 225, 1), rgba(255, 186, 158, 1) 100%)',

@@ -1,6 +1,11 @@
  <section id="sobre" class="about-section">
     <div class="section-header">
-      <app-three-scene text="Sobre" [size]="150" [color]="color" [backgroundColor]="backgroundColor" [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+      @if (isDesktop()) {
+        <app-three-scene text="Sobre" [size]="150" [color]="color" [backgroundColor]="backgroundColor" [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+      } @else {
+        <h2>Sobre</h2>
+      }
+      <p>Conheça um pouco da minha trajetória</p>
     </div>
 
   <div class="sobre-row">
@@ -31,7 +36,11 @@
 
     </div>
     <div class="sobre-image">
-      <img src="images/colegas.jpeg" alt="Experiência profissional">
+      <figure>
+        <img src="images/colegas.jpeg" alt="Foto em ambiente de escritório mostrando um grupo de jovens sentados em cadeiras de trabalho, diante de computadores. Alguns olham para a câmera e sorriem, enquanto outros estão de perfil. O clima é descontraído e colaborativo, representando uma equipe de tecnologia durante o expediente.">
+        <figcaption>2021 - Durante minha trajetória profissional em uma nova cidade. Um período marcado por muito aprendizado técnico, desafios diários e amizades que levarei para a vida toda.</figcaption>
+      </figure>
+
     </div>
   </div>
 
