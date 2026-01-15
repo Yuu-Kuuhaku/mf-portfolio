@@ -1,45 +1,70 @@
 <section class="projects-section" id="projetos">
   <header class="section-header">
     @if (isDesktop()) {
-      <app-three-scene text="Projetos" [size]="150" [color]="color" [backgroundColor]="backgroundColor" [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+      <app-three-scene
+        text="Projetos"
+        [size]="150"
+        [color]="color"
+        [backgroundColor]="backgroundColor"
+        [colorLighten]="colorLighten"
+        [reflectionMaterialColor]="reflectionMaterialColor">
+      </app-three-scene>
     } @else {
       <h2>Projetos</h2>
     }
+
     <p>Algumas ideias que saíram do papel</p>
   </header>
 
-  <div class="projects-wrapper">
-    <article
-      class="project-card"
-      *ngFor="let project of projects()"
-      [style.background]="project.gradient"
-    >
+  @if (projectsService.loading()) {
+    <p class="loading-text">Carregando projetos...</p>
+  }
 
-      <app-img-carousel [images]="project.images"></app-img-carousel>
+  @if (!projectsService.loading()) {
+    <div class="projects-wrapper">
+      @for (project of projectsService.projects(); track project.title) {
+        <article
+          class="project-card"
+          [style.background]="project.gradient">
 
+          <app-img-carousel [images]="project.images"></app-img-carousel>
 
-      <div class="project-info">
-        <h3>{{ project.title }}</h3>
-        <span>{{ project.subtitle }}</span>
-        <p>{{ project.description }}</p>
+          <div class="project-info">
+            <h3>{{ project.title }}</h3>
+            <span>{{ project.subtitle }}</span>
+            <p>{{ project.description }}</p>
 
-        <div class="list-techs">
-          @for (stack of project.stacks; track $index) {
-            <span class="tech-badge">{{ stack }}</span>
-          }
-        </div>
+            <div class="list-techs">
+              @for (stack of project.stacks; track stack) {
+                <span class="tech-badge">{{ stack }}</span>
+              }
+            </div>
 
+            <div class="actions">
+              @if (project.link) {
+                <a
+                  [href]="project.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn">
+                  Projeto
+                </a>
+              }
 
-        <div class="actions">
-          @if(project.link) {
-            <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="btn">Projeto</a>
-          }
-          @if(project.github_link) {
-            <a [href]="project.github_link" target="_blank" rel="noopener noreferrer" class="btn">código fonte</a>
-          }
-        </div>
-      </div>
+              @if (project.github_link) {
+                <a
+                  [href]="project.github_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn">
+                  Código fonte
+                </a>
+              }
+            </div>
+          </div>
 
-    </article>
-  </div>
+        </article>
+      }
+    </div>
+  }
 </section>
