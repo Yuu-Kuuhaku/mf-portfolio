@@ -1,15 +1,15 @@
-import { AfterViewInit, Component, computed, ElementRef, HostListener, inject, OnInit, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { ProjectsSectionComponent } from '../../shared/_componentes/projects-section/projects-section';
 import { Header } from "../../shared/_componentes/header/header";
 import { Sobre } from "../../shared/_componentes/sobre/sobre";
-import { ActivatedRoute, RouterState } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Tecnologias } from "../../shared/_componentes/tecnologias/tecnologias";
 import { Contato } from "../../shared/_componentes/contato/contato";
 import { Footer } from "../../shared/_componentes/footer/footer";
 
 @Component({
   selector: 'app-portfolio',
-  imports: [ProjectsSectionComponent, Header, Sobre, Tecnologias, Contato, Footer],
+  imports: [ProjectsSectionComponent, Header, Sobre, Tecnologias, Contato, Footer, RouterLink],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
 })
