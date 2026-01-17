@@ -1,7 +1,74 @@
-<section class="projects-section" id="projetos">
-  <header class="section-header">
-    <app-three-scene text="Tecnologias"></app-three-scene>
-  </header>
+<section class="tech-section" id="tecnologias">
+  <div class="section-header">
+    @if (isDesktop()) {
+    <app-three-scene text="Tecnologias" [size]="120" [color]="color" [backgroundColor]="backgroundColor"
+      [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+    } @else {
+      <h2>Tecnologias</h2>
+    }
+    <p>Conheça as tecnologias que utilizo em meus projetos</p>
+  </div>
 
+  <div class="content">
+      <div class="tech-kpis">
+    <div class="kpi-card">
+      <h3>6</h3>
+      <p>Anos de experiência</p>
+    </div>
 
+    <div class="kpi-card">
+      <h3>+20</h3>
+      <p>Projetos</p>
+    </div>
+
+    <div class="kpi-card">
+      <h3>8</h3>
+      <p>Anos de estudo</p>
+    </div>
+  </div>
+
+   <!-- CARROSSEL -->
+  <div class="tech-carousel">
+    <div class="carousel-track">
+      @for (tech of techs; track $index) {
+        <div class="tech-card">
+          <img src="{{ tech.icon_src }}" alt="{{ tech.name }} Logo" class="tech-icon" />
+          <span>{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="carousel-track">
+      @for (tech of techs2; track $index) {
+        <div class="tech-card">
+          <img src="{{ tech.icon_src }}" alt="{{ tech.name }} Logo" class="tech-icon" />
+          <span>{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  @if (isDesktop()) {
+    <div class="dashboard">
+      <canvas id="techChart"></canvas>
+    </div>
+  }
+
+  <!-- TECNOLOGIAS USADAS NESTE PORTFÓLIO -->
+
+  <h4 >Tecnologias usadas neste portfólio</h4>
+
+    <div>
+      <div class="carousel-notrack">
+        @for (tech of techsUsed; track $index) {
+          <div class="tech-card">
+            <img src="{{ tech.icon_src }}" alt="{{ tech.name }} Logo" class="tech-icon" />
+            <span>{{ tech.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
 </section>

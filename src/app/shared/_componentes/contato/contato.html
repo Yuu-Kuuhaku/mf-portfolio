@@ -1,0 +1,28 @@
+<section class="contato" id="contato">
+
+  <div class="section-header">
+    @if (isDesktop()) {
+      <app-three-scene text="Contato" [size]="150" [color]="color" [backgroundColor]="backgroundColor" [colorLighten]="colorLighten" [reflectionMaterialColor]="reflectionMaterialColor"></app-three-scene>
+    } @else {
+      <h2>Contato</h2>
+    }
+    <p>Vamos conversar? Me encontre em:</p>
+  </div>
+
+  <div class="contato-grid">
+    @for (c of contatos; track $index) {
+      <a
+        class="contato-card"
+        [href]="c.link"
+        target="_blank"
+      >
+        <i [class]="c.icon"></i>
+        <div>
+          <span>{{ c.label }}</span>
+          <strong>{{ c.value }}</strong>
+        </div>
+      </a>
+    }
+
+  </div>
+</section>

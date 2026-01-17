@@ -3,10 +3,13 @@ import { ProjectsSectionComponent } from '../../shared/_componentes/projects-sec
 import { Header } from "../../shared/_componentes/header/header";
 import { Sobre } from "../../shared/_componentes/sobre/sobre";
 import { ActivatedRoute, RouterState } from '@angular/router';
+import { Tecnologias } from "../../shared/_componentes/tecnologias/tecnologias";
+import { Contato } from "../../shared/_componentes/contato/contato";
+import { Footer } from "../../shared/_componentes/footer/footer";
 
 @Component({
   selector: 'app-portfolio',
-  imports: [ProjectsSectionComponent, Header, Sobre],
+  imports: [ProjectsSectionComponent, Header, Sobre, Tecnologias, Contato, Footer],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
 })

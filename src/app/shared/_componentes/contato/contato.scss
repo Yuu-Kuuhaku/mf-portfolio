@@ -1,0 +1,71 @@
+.contato {
+  padding: 80px 20px;
+  background: #020617;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+}
+
+.section-header p {
+  margin-top: 2%;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contato-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.contato-card i {
+  font-size: 2rem;
+  color: #38bdf8;
+}
+
+.contato-card span {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.contato-card strong {
+  display: block;
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+.contato-card:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .section-header p {
+    text-align: left;
+  }
+
+}

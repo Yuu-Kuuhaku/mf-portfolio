@@ -8,9 +8,10 @@
       <div class="buttons">
         <a (click)="scrollTo('portfolio')" class="btn">Portfólio</a>
         <a (click)="scrollTo('projetos')" class="btn">Projetos</a>
+        <a (click)="scrollTo('tecnologias')" class="btn">Tecnologias</a>
         <a (click)="scrollTo('sobre')" class="btn">Sobre</a>
-        <a routerLink="/main/curriculo" class="btn">Currículo</a>
         <a (click)="scrollTo('contato')" class="btn">Contato</a>
+        <a routerLink="/main/curriculo" class="btn">Currículo</a>
       </div>
     } @else {
       <!-- MOBILE -->
@@ -22,9 +23,11 @@
     <div class="mobile-menu" >
       <a (click)="scrollTo('portfolio')">Portfólio</a>
       <a (click)="scrollTo('projetos')">Projetos</a>
+      <a (click)="scrollTo('tecnologias')" >Tecnologias</a>
       <a (click)="scrollTo('sobre')">Sobre</a>
-      <a routerLink="/main/curriculo" (click)="closeMenu()">Currículo</a>
       <a (click)="scrollTo('contato')">Contato</a>
+      <a routerLink="/main/curriculo" (click)="closeMenu()">Currículo</a>
+
     </div>
   }
 }
