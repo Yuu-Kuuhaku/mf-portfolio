@@ -1,28 +1,13 @@
 [
   {
-    "title": "Your Therapy",
-    "subtitle": "Bem estar Mental",
-    "description": "Um espaço digital de acolhimento para cuidar da mente, registrar emoções e encontrar momentos de calma no dia a dia.",
-    "gradient": "linear-gradient(135deg, #a6c46e, #3d6b2d)",
-    "images": [
-      "images/yourtherapy/img1.jpg",
-      "images/yourtherapy/img2.jpg",
-      "images/yourtherapy/img3.jpg",
-      "images/yourtherapy/img4.jpg",
-      "images/yourtherapy/img5.jpg",
-      "images/yourtherapy/img6.jpg"
-    ],
-    "stacks": ["Android Studio", "Java", "SQLite"],
-    "github_link": "https://github.com/Yuu-Kuuhaku/your_therapy"
-  },
-  {
     "title": "Gerador de fichas para RPG (malditos goblins)",
     "subtitle": "Jogos RPG",
     "description": "Aplicação web desenvolvida para gerar fichas de personagens do sistema Malditos Goblins.",
     "gradient": "linear-gradient(135deg, #d97d9a, #52944f)",
     "images": [
-      "images/malditos-goblins/img1.png",
-      "images/malditos-goblins/img2.png"
+      "images/malditos-goblins/img1.webp",
+      "images/malditos-goblins/img2.png",
+      "images/malditos-goblins/img3.png"
     ],
     "stacks": ["Angular", "TypeScript", "SCSS"],
     "link": "https://malditos-goblins-rpg.s3.sa-east-1.amazonaws.com/index.html",
@@ -34,10 +19,9 @@
     "description": "Plataforma que ajuda empresas a aumentar vendas por meio de premiação e cashback personalizados.",
     "gradient": "linear-gradient(135deg, rgba(72, 23, 147, 1), rgba(217, 95, 225, 1), rgba(255, 186, 158, 1) 100%)",
     "images": [
-      "images/estruturapp/img1.png",
+      "images/estruturapp/img1.webp",
       "images/estruturapp/img2.png",
-      "images/estruturapp/img3.jpeg",
-      "images/estruturapp/img4.jpeg"
+      "images/estruturapp/img3.png"
     ],
     "stacks": ["Angular", "TypeScript", "SCSS", "Angular Material", "Java", "MySQL"],
     "link": "https://www.estruturapp.com.br/"
@@ -70,9 +54,23 @@
     "description": "Ecommerce especializado em bebidas.",
     "gradient": "linear-gradient(135deg, #000, #fde101)",
     "images": [
-      "images/cerveja&tudo/img1.jpeg",
-      "images/cerveja&tudo/img2.jpeg"
+      "images/cerveja&tudo/img1.webp",
+      "images/cerveja&tudo/img2.jpeg",
+      "images/cerveja&tudo/img3.jpeg"
     ],
-    "stacks": ["Angular", "TypeScript", "SCSS", "Angular Material", "MySQL", "Node.js", "MongoDB", "Docker", "Flutter"]
+    "stacks": ["Angular", "TypeScript", "SCSS", "Angular Material", "MySQL", "Node.js", "MongoDB", "Docker"]
+  },
+  {
+    "title": "Timer (one piece Live action)",
+    "subtitle": "Timer para contagem regressiva",
+    "description": "Timer para contagem regressiva para a nova temporada da serie One Piece (trocando imagens texto e data pode ser usado como timer de qualquer outro evento).",
+    "gradient": "linear-gradient(135deg, #09086E, #FDDF28)",
+    "images": [
+      "images/timer/img1.png",
+      "images/timer/img2.png"
+    ],
+    "link": "https://angular-timer-beta.vercel.app/",
+    "github_link": "https://github.com/Yuu-Kuuhaku/angularTimer",
+    "stacks": ["Angular", "TypeScript" ]
   }
 ]

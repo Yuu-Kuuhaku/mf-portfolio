@@ -9,7 +9,7 @@ import { Chart } from 'chart.js/auto';
 })
 export class Tecnologias implements AfterViewInit {
 
-   screenWidth = signal(window.innerWidth);
+  screenWidth = signal(window.innerWidth);
 
   // breakpoints semânticos
   isDesktop = computed(() => this.screenWidth() >= 1024);
@@ -32,6 +32,7 @@ export class Tecnologias implements AfterViewInit {
     { name: 'Node.js', icon_src: 'images/nodejs.png' },
     { name: 'React', icon_src: 'svgs/react-logo.svg' },
     { name: 'Git', icon_src: 'svgs/git-svgrepo-com.svg' },
+    { name: 'Chart.js', icon_src: 'images/chartjs.webp' },
 
   ];
 
@@ -51,6 +52,7 @@ export class Tecnologias implements AfterViewInit {
     { name: 'Angular', icon_src: 'svgs/angular.svg' },
     { name: 'TypeScript', icon_src: 'images/typescript.webp' },
     { name: 'Three.js', icon_src: 'images/threejs.png' },
+    { name: 'Chart.js', icon_src: 'images/chartjs.webp' },
   ];
 
 
@@ -60,10 +62,10 @@ export class Tecnologias implements AfterViewInit {
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Html css Js', 'Angular', 'Node', 'React', 'Flutter', 'Fluig', 'TypeScript', 'Git', 'NestJS', 'Bancos de dados' ],
+        labels: ['Html css Js', 'Angular', 'Node', 'React', 'Fluig', 'TypeScript', 'Git', 'NestJS', 'Bancos de dados' ],
         datasets: [{
           label: 'Nível de domínio',
-          data: [85, 90, 50, 60, 40, 60, 70, 90, 50, 50],
+          data: [85, 90, 50, 60, 60, 70, 90, 50, 50],
           backgroundColor: '#38bdf8',
           borderRadius: 5,
           barPercentage: 1,

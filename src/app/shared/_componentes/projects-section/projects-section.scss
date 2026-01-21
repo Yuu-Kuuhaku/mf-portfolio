@@ -27,11 +27,11 @@
 
 
 .project-card {
-  border-radius: 26px;
-  padding: 40px;
+  border-radius: 12px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 8px;
   min-height: 420px;
   user-select: none;
   box-shadow:
@@ -67,7 +67,12 @@
 }
 
 .project-info{
-  margin-top: auto;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 100%;
 }
 
 /* ===== INFO ===== */
@@ -88,7 +93,7 @@
 .actions {
   display: flex;
   gap: 16px;
-  margin-top: 24px;
+  margin-top: auto;
 }
 
 .actions .btn {
@@ -132,7 +137,7 @@
 }
 
 .list-techs {
-  margin-top: 16px;
+  margin: 16px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
