@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ImgCarousel } from '../img-carousel/img-carousel';
 import { ThreeScene } from "../three-scene/three-scene";
 import { ProjectsService } from '../../_services/project';
+import { RouterLink } from "@angular/router";
 
 interface Project {
   title: string;
@@ -18,7 +19,7 @@ interface Project {
 @Component({
   selector: 'app-projects-section',
   standalone: true,
-  imports: [CommonModule, ImgCarousel, ThreeScene],
+  imports: [CommonModule, ImgCarousel, ThreeScene, RouterLink],
   templateUrl: './projects-section.html',
   styleUrls: ['./projects-section.scss']
 })

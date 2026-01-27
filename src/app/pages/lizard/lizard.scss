@@ -1,0 +1,38 @@
+canvas {
+  display: block;
+  background: #0b0e14;
+  cursor: url('/svgs/insect.svg') 16 16, auto;
+}
+
+
+
+.container-btn {
+
+  background: #0b0e14;
+  position: absolute;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+.btn-back {
+  padding: 14px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  transition: all .35s ease;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-back:hover {
+   transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 30px rgba(0,240,255,.45),
+    0 0 40px rgba(139,92,246,.35);
+}

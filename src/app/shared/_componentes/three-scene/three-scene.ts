@@ -98,9 +98,7 @@ export class ThreeScene
     this.renderer.setSize(clientWidth, clientHeight);
     this.container.nativeElement.appendChild(this.renderer.domElement);
 
-    // Events
-    this.container.nativeElement.addEventListener('pointerdown', this.onPointerDown);
-    document.addEventListener('keydown', this.onKeyDown);
+
   }
 
   private animate = () => {
@@ -186,32 +184,4 @@ export class ThreeScene
     this.windowHalfX = clientWidth / 2;
   };
 
-  private onPointerDown = (event: PointerEvent) => {
-    this.pointerXOnPointerDown = event.clientX - this.windowHalfX;
-    this.targetRotationOnPointerDown = this.targetRotation;
-
-    document.addEventListener('pointermove', this.onPointerMove);
-    document.addEventListener('pointerup', this.onPointerUp);
-  };
-
-  private onPointerMove = (event: PointerEvent) => {
-    this.pointerX = event.clientX - this.windowHalfX;
-    this.targetRotation =
-      this.targetRotationOnPointerDown +
-      (this.pointerX - this.pointerXOnPointerDown) * 0.02;
-  };
-
-  private onPointerUp = () => {
-    document.removeEventListener('pointermove', this.onPointerMove);
-    document.removeEventListener('pointerup', this.onPointerUp);
-  };
-
-  private onKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Backspace') {
-      this.text = this.text.slice(0, -1);
-    } else if (event.key.length === 1) {
-      this.text += event.key;
-    }
-    this.createText();
-  };
 }

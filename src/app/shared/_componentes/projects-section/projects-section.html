@@ -41,7 +41,13 @@
             </div>
 
             <div class="actions">
-              @if (project.link) {
+              @if (project.link && project.local) {
+                <a
+                  [routerLink]="project.link"
+                  class="btn">
+                  Projeto
+                </a>
+              } @else if (project.link ) {
                 <a
                   [href]="project.link"
                   target="_blank"

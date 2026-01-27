@@ -31,21 +31,25 @@
     "subtitle": "Ecommerce/delivery de bebidas",
     "description": "Ecommerce especializado em bebidas, oferecendo uma ampla variedade de produtos.",
     "gradient": "linear-gradient(135deg, #510c76, #e50947)",
-    "images": [
-      "images/eubebo/img1.jpeg",
-      "images/eubebo/img2.jpeg"
-    ],
-    "stacks": ["Angular", "TypeScript", "SCSS", "Angular Material", "MySQL", "NestJS", "MongoDB", "Docker", "Flutter"]
+    "images": ["images/eubebo/img1.jpeg", "images/eubebo/img2.jpeg"],
+    "stacks": [
+      "Angular",
+      "TypeScript",
+      "SCSS",
+      "Angular Material",
+      "MySQL",
+      "NestJS",
+      "MongoDB",
+      "Docker",
+      "Flutter"
+    ]
   },
   {
     "title": "demae",
     "subtitle": "Gerenciamento de água e esgoto",
     "description": "Sistema de gerenciamento de água e esgoto para empresa de saneamento.",
     "gradient": "linear-gradient(135deg, #06b6d4, #2563eb)",
-    "images": [
-      "images/demae/img1.png",
-      "images/demae/img2.png"
-    ],
+    "images": ["images/demae/img1.png", "images/demae/img2.png"],
     "stacks": ["Angular", "TypeScript", "SCSS", "Angular Material", "MySQL", "Java"]
   },
   {
@@ -58,19 +62,36 @@
       "images/cerveja&tudo/img2.jpeg",
       "images/cerveja&tudo/img3.jpeg"
     ],
-    "stacks": ["Angular", "TypeScript", "SCSS", "Angular Material", "MySQL", "Node.js", "MongoDB", "Docker"]
+    "stacks": [
+      "Angular",
+      "TypeScript",
+      "SCSS",
+      "Angular Material",
+      "MySQL",
+      "Node.js",
+      "MongoDB",
+      "Docker"
+    ]
   },
   {
     "title": "Timer (one piece Live action)",
     "subtitle": "Timer para contagem regressiva",
     "description": "Timer para contagem regressiva para a nova temporada da serie One Piece (trocando imagens texto e data pode ser usado como timer de qualquer outro evento).",
     "gradient": "linear-gradient(135deg, #09086E, #FDDF28)",
-    "images": [
-      "images/timer/img1.png",
-      "images/timer/img2.png"
-    ],
+    "images": ["images/timer/img1.png", "images/timer/img2.png"],
     "link": "https://angular-timer-beta.vercel.app/",
     "github_link": "https://github.com/Yuu-Kuuhaku/angularTimer",
-    "stacks": ["Angular", "TypeScript" ]
+    "stacks": ["Angular", "TypeScript"]
+  },
+  {
+    "title": "Lagarto procedural",
+    "description": "Desenvolvendo conceitos de programação procedural e uso do canvas",
+    "subtitle": "Lagarto 2d que persegue o inseto",
+    "gradient": "linear-gradient(135deg, #000, #5e8f6d)",
+    "images": ["images/lagarto/img1.png", "images/lagarto/img2.png"],
+    "github_link": "https://github.com/Yuu-Kuuhaku/mf-portfolio/tree/master/src/app/pages/lizard",
+    "link": "/main/lizard",
+    "stacks": ["Angular", "canvas", "TypeScript"],
+    "local": true
   }
 ]

@@ -18,12 +18,19 @@ export const routes: Routes = [
         loadComponent() {
           return import('./pages/curriculo/curriculo').then(m => m.Curriculo);
         }
+      },
+      {
+        path: 'lizard',
+        loadComponent() {
+          return import('./pages/lizard/lizard').then(m => m.Lizard);
+        }
       }
     ]
   },
   {
     path: 'not-found',
-    component: NotFound
+    component: NotFound,
+
   },
   {
     path: '',

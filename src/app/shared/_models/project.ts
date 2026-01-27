@@ -7,4 +7,5 @@ export interface Project {
   stacks: string[];
   link?: string;
   github_link?: string;
+  local?: boolean
 }
